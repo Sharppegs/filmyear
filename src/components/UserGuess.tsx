@@ -8,14 +8,15 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 
-function UserGuess(props:{year: any}) {
+function UserGuess(props:{year: number}) {
     const [userInput, setUserInput] = useState({
-        userYear: ""
+        userYear: 0
     })
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
 
     const style = {
         position: 'absolute' as 'absolute',
@@ -29,8 +30,7 @@ function UserGuess(props:{year: any}) {
         p: 4,
       };
 
-    
-
+ 
     function handleChange(event:any) {
         const {name, value} = event.target
         setUserInput(prevInput => ({
@@ -39,12 +39,13 @@ function UserGuess(props:{year: any}) {
         }))
     }
 
-    function checkAnswer(year:any) {
+    function checkAnswer(year:number) {
+        
         if(year === props.year) {
             console.log(`correct, it is ${props.year}`)
             handleOpen()
         } else {
-            console.log("No, try again")
+            console.log(props.year)
             
         }
     }

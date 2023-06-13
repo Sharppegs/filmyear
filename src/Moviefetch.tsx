@@ -12,7 +12,7 @@ import UserGuess from './components/UserGuess';
 const Moviefetch: React.FC = function() {
     const [title, setTitle] = useState({
         Title: "",
-        Year: "",
+        Year: 0,
         imdbID: "",
         Type: "",
         Poster: ""
@@ -46,7 +46,7 @@ const Moviefetch: React.FC = function() {
            
   return (
     <div>
-        <Container>
+        <Container className='grid mx-auto'>
             <Row className='mb-5'>
                 <MovieDisplay
                     movieName={title.Title}

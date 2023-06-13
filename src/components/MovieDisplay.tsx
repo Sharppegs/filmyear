@@ -9,14 +9,14 @@ import UserGuess from './UserGuess';
 
 
 function MovieDisplay(props:
-    {movieName: string, year: any, poster: string}) {
+    {movieName: string, year: number, poster: string}) {
 
   return (
     <div key={nanoid()}>
     
         <Container className='px-1 py-1'>
             <Row className="mt-5 mt-md-0">
-                <Col md={6} className="d-flex flex-column justify-content-center order-2">
+                <Col md={6} className="d-flex flex-column justify-content-center text-center order-2">
                     <motion.h1
                         variants={fadeUp}
                         initial="hidden"
@@ -26,7 +26,7 @@ function MovieDisplay(props:
                     </motion.h1>
                     <UserGuess year={props.year} />
                 </Col>
-                <Col md={6} className="d-flex flex-column justify-content-center order-1">
+                <Col md={6} className="d-flex flex-column justify-content-center align-items-center order-1">
                     <motion.img 
                         src={props.poster} 
                         className='poster' 
