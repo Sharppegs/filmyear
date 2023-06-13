@@ -10,7 +10,7 @@ import Modal from '@mui/material/Modal';
 
 function UserGuess(props:{year: number}) {
     const [userInput, setUserInput] = useState({
-        userYear: 0
+        userYear: 0 
     })
 
     const [open, setOpen] = useState(false);
@@ -41,11 +41,11 @@ function UserGuess(props:{year: number}) {
 
     function checkAnswer(year:number) {
         
-        if(year === props.year) {
+        if(year == props.year) {
             console.log(`correct, it is ${props.year}`)
             handleOpen()
         } else {
-            console.log(props.year)
+            console.log(props.year + 1, props.year + 2, props.year + 3)
             
         }
     }

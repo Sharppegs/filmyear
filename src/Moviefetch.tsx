@@ -12,7 +12,7 @@ import UserGuess from './components/UserGuess';
 const Moviefetch: React.FC = function() {
     const [title, setTitle] = useState({
         Title: "",
-        Year: 0,
+        Year: "",
         imdbID: "",
         Type: "",
         Poster: ""
@@ -37,6 +37,7 @@ const Moviefetch: React.FC = function() {
         try {
             const response = await fetch(url, options);
             const result = await response.json();
+            console.log(result.Search[0])
             setTitle(result.Search[0]);
         } catch (error) {
             console.error(error);
@@ -50,7 +51,7 @@ const Moviefetch: React.FC = function() {
             <Row className='mb-5'>
                 <MovieDisplay
                     movieName={title.Title}
-                    year={title.Year}
+                    year={parseInt(title.Year, 10)}
                     poster={title.Poster}
                 />
             </Row>
