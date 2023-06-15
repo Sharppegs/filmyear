@@ -1,4 +1,4 @@
-export default [
+const One = [
     "Citizen Kane",
     "The Godfather",
     "Casablanca",
@@ -14,7 +14,6 @@ export default [
     "Star Wars Episode IV: A New Hope",
     "Psycho",
     "2001: A Space Odyssey",
-    "Sunset Boulevard",
     "The Graduate",
     "The General",
     "On the Waterfront",
@@ -39,12 +38,14 @@ export default [
     "The Treasure of the Sierra Madre",
     "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
     "The Sound of Music",
-    "King Kong",
     "Bonnie and Clyde",
     "Midnight Cowboy",
     "The Philadelphia Story",
     "Shane",
-    "It Happened One Night",
+    "It Happened One Night"
+]
+
+const Two = [
     "A Streetcar Named Desire",
     "Rear Window",
     "Intolerance",
@@ -98,6 +99,45 @@ export default [
     "Blade Runner",
     "Yankee Doodle Dandy",
     "Toy Story",
-    "Ben-Hur",
+    "Ben-Hur"
 ]
+
+const Three = [
+    "Jackie Brown",
+    "Batman Begins",
+    "The Rock",
+    "Jumanji",
+    "Toy Story 2",
+    "Blow",
+    "Tinker Tailor Soldier Spy",
+    "Avatar",
+    "The Black Cauldron",
+    "Little Miss Sunshine",
+    "This is England",
+    "The Truman Show",
+    "Pillow Talk",
+    "The Deaprted",
+    "The Bourne Identity",
+    "Tron",
+    "The Death of Stalin",
+    "Get Out",
+    "Hook",
+    "This is Spinal Tap",
+    "Parasite",
+    "Elf",
+    "Sister Act",
+    "Wahtever Happened to Baby Jane?",
+    "You've Got Mail",
+    "Top Gun",
+    "Beverly Hills Cop",
+    "Catch Me if you Can",
+    "Notting Hill",
+    "Time Bandits",
+    "Halloween",
+    "Batman Forever",
+    "Donnie Darko",
+    "The Killing Fields"
+]
+
+export {One, Two, Three}
 

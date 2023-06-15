@@ -1,15 +1,22 @@
 import React from 'react'
-import {One} from './titles'
-import { useState } from 'react'
-
+import {Three} from './titles'
+import { useState, useContext } from 'react'
+import { Context } from "./Context"
+import Button from 'react-bootstrap/Button';
 import MovieDisplay from './components/MovieDisplay';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserGuess from './components/UserGuess';
+import { useEffect } from 'react';
 
 
-const Moviefetch: React.FC = function() {
+const RoundThree: React.FC = function() {
+
+    const {filmList, filmListWrong} = useContext(Context)
+    console.log(filmList) 
+    console.log(filmListWrong) 
+
     const [title, setTitle] = useState({
         Title: "",
         Year: "",
@@ -18,13 +25,16 @@ const Moviefetch: React.FC = function() {
         Poster: ""
     })
 
-    const [beginGame, setBeginGame] = useState(false)
-
+    useEffect(() => {
+        let ignore = false;
+        
+        if (!ignore)  getTitle()
+        return () => { ignore = true; }
+    },[]);
 
     function getTitle() {
-        let random = Math.floor(Math.random()*One.length)
-        let chosenTitle = One[random]
-        setBeginGame(prev => !prev)
+        let random = Math.floor(Math.random()*Three.length)
+        let chosenTitle = Three[random]
         fetchMovie(chosenTitle)    
     }
 
@@ -59,16 +69,13 @@ const Moviefetch: React.FC = function() {
                     poster={title.Poster}
                 />
             </Row>
-            <Row className='px-2'>
-                <UserGuess year={parseInt(title.Year, 10)} round={"RoundTwo"} title={title.Title} poster={title.Poster} />
+            <Row>
+                <UserGuess year={parseInt(title.Year, 10)} round={"FinalScore"} title={title.Title} poster={title.Poster}/>
+                
             </Row>
-            <Row className={beginGame ? 'd-none' : 'px-5'}>
-                <button className='begin-button' onClick={() => getTitle()}>Begin!</button> 
-            </Row>
-            
         </Container>
     </div>
   )
 }
 
-export {Moviefetch}
+export {RoundThree}
