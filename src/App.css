@@ -36,6 +36,18 @@
   object-fit: cover;
 }
 
+.answered {
+  margin: 1em auto;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  border: 1px solid red;
+}
+
+.logged {
+  color: purple;
+}
+
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
