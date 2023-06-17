@@ -5,7 +5,7 @@ import { RoundTwo } from './RoundTwo'
 import { RoundThree } from './RoundThree'
 import { RoundFour } from './RoundFour'
 import {FinalScore}  from './FinalScore'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import { RoundFive } from './RoundFive'
 import { RoundSix } from './RoundSix'
