@@ -5,10 +5,10 @@ import { RoundTwo } from './RoundTwo'
 import { RoundThree } from './RoundThree'
 import { RoundFour } from './RoundFour'
 import {FinalScore}  from './FinalScore'
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import { RoundFive } from './RoundFive'
 import { RoundSix } from './RoundSix'
+import { RoundSeven } from './RoundSeven'
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
             <Route path="/RoundFour" element={<RoundFour />} />
             <Route path="/RoundFive" element={<RoundFive />} />
             <Route path="/RoundSix" element={<RoundSix />} />
+            <Route path="/RoundSeven" element={<RoundSeven />} />
             <Route path="/FinalScore" element={<FinalScore />} />
             
             

@@ -310,7 +310,7 @@ const Five = [
     "Withnail & I",
     "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
     "Kes",
-    "Castaway",
+    "Cast Away",
     "X-Men: First Class",
     "Jacob's Ladder",
     "The Little Mermaid",
@@ -341,7 +341,7 @@ const Six = [
     "Bad Boys",
     "The Piano",
     "The elephant man",
-    "Batman",
+    "The Witches",
     "The Goonies",
     "Roman Holiday",
     "Mulholland Drive",
@@ -393,5 +393,78 @@ const Six = [
     "The Great Escape"
 ]
 
-export {One, Two, Three, Four, Five, Six}
+const Seven = [
+    "Fatal Attraction",
+    "The Matrix Reloaded",
+    "The Long Good Friday",
+    "Who Framed Roger Rabbit",
+    "Mildred Pierce",
+    "Hostel",
+    "Saw",
+    "Scream",
+    "Speed",
+    "Demolition Man",
+    "Spotlight",
+    "The Hurt Locker",
+    "Out of Africa",
+    "The Shape of Water",
+    "Gandhi",
+    "My Fair Lady",
+    "The Adventures of Robin Hood",
+    "Robin Hood: Prince of Thieves",
+    "The Princess Bride",
+    "Lethal Weapon 2",
+    "Mad Max: Fury Road",
+    "The English Patient",
+    "Heathers",
+    "True Romance",
+    "Django Unchained",
+    "Sphere",
+    "Crash",
+    "Showgirls",
+    "Austin Powers: The Spy who shagged me",
+    "Uncut Gems",
+    "Big Night",
+    "Precious",
+    "The Irishman",
+    "The Godfather part III",
+    "The Lion king",
+    "Aladdin",
+    "La Haine",
+    "9 to 5",
+    "The Muppet Movie",
+    "Memento",
+    "The Lives of Others",
+    "Team America: World Police",
+    "Fame",
+    "Born Free",
+    "Free Willy",
+    "Tremors",
+    "Hsckers",
+    "Nil by Mouth",
+    "The Hunt for Red October",
+    "Training Day",
+    "Minority Report",
+    "Planes, Trains & Automobiles",
+    "Con Air",
+    "A Fish Called Wanda",
+    "Jurassic Park",
+    "Bedknobs and Broomsticks",
+    "Election",
+    "The King of Comedy",
+    "Footloose",
+    "Frost/Nixon",
+    "My Dinner with Andre",
+    "The Poseidon Adventure",
+    "The Post",
+    "Coming to America"
+
+
+
+
+    
+
+]
+
+export {One, Two, Three, Four, Five, Six, Seven}
 
