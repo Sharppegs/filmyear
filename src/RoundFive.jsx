@@ -14,8 +14,7 @@ import { useEffect } from 'react';
 function RoundFive() {
 
     const {filmList, filmListWrong} = useContext(Context)
-    console.log(filmList) 
-    console.log(filmListWrong) 
+    console.log(Five.length)  
 
     const [title, setTitle] = useState({
         Title: "",

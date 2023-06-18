@@ -17,6 +17,8 @@
   background: rgb(206, 195, 169);
   border: none;
   outline: none;
+  font-family: 'Russo One', sans-serif;
+  font-size: 2rem;
 }
 
 .option-button {

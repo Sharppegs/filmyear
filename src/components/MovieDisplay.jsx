@@ -9,10 +9,11 @@ import { useEffect, useState } from 'react';
 
 
 function MovieDisplay(props) {
-  
+
     
   return (
-    <div key={nanoid()}>
+ <div key={nanoid()}>
+    
          <Container className='px-1 py-1'>
             <Row className="mt-2 mt-md-0">
                 <Col md={6} className="d-flex flex-column justify-content-center text-center order-2">
@@ -38,8 +39,7 @@ function MovieDisplay(props) {
                     </div>
                 </Col>
             </Row>
-        </Container>
-       
+        </Container>  
     </div>
   )
 }

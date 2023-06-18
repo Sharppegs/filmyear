@@ -13,8 +13,8 @@ import { Context } from "./Context"
 
 function RoundTwo() {
     const {filmList, filmListWrong} = useContext(Context)
-    console.log(filmList) 
-    console.log(filmListWrong) 
+     
+    console.log(Two.length) 
 
     const [title, setTitle] = useState({
         Title: "",
@@ -23,7 +23,7 @@ function RoundTwo() {
         Type: "",
         Poster: ""
     })
-    const [hasAnswered, setHasAnswered] = useState(false)
+    
 
     useEffect(() => {
         let ignore = false;

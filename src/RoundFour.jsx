@@ -14,8 +14,8 @@ import { useEffect } from 'react';
 function RoundFour() {
 
     const {filmList, filmListWrong} = useContext(Context)
-    console.log(filmList) 
-    console.log(filmListWrong) 
+     
+    console.log(Four.length) 
 
     const [title, setTitle] = useState({
         Title: "",

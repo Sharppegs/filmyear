@@ -18,6 +18,8 @@ function Moviefetch() {
         Poster: ""
     })
 
+    console.log(One.length)
+
     const [beginGame, setBeginGame] = useState(false)
 
 

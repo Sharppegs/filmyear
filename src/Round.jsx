@@ -1,21 +1,20 @@
 import React from 'react'
-import {Three} from './titles'
-import { useState, useContext } from 'react'
-import { Context } from "./Context"
+import {One, Two, Three, Four, Five, Six, Seven} from './titles'
 import Button from 'react-bootstrap/Button';
 import MovieDisplay from './components/MovieDisplay';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserGuess from './components/UserGuess';
-import { useEffect } from 'react';
+import { useEffect, useContext, useState } from 'react';
+import { Context } from "./Context"
 
 
-function RoundThree() {
 
+function RoundTwo() {
     const {filmList, filmListWrong} = useContext(Context)
-    
-    
+     
+    console.log(Two.length) 
 
     const [title, setTitle] = useState({
         Title: "",
@@ -24,17 +23,18 @@ function RoundThree() {
         Type: "",
         Poster: ""
     })
+    const [hasAnswered, setHasAnswered] = useState(false)
 
     useEffect(() => {
         let ignore = false;
         
-        if (!ignore)  getTitle()
+        if (!ignore) getTitle()
         return () => { ignore = true; }
-    },[]);
+        },[]);
 
     function getTitle() {
-        let random = Math.floor(Math.random()*Three.length)
-        let chosenTitle = Three[random]
+        let random = Math.floor(Math.random()*Two.length)
+        let chosenTitle = Two[random]
         fetchMovie(chosenTitle)    
     }
 
@@ -55,6 +55,7 @@ function RoundThree() {
             setTitle(result.Search[0]);
         } catch (error) {
             console.error(error);
+            getTitle()
         }
             }
 
@@ -70,7 +71,7 @@ function RoundThree() {
                 />
             </Row>
             <Row>
-                <UserGuess year={parseInt(title.Year, 10)} round={"RoundFour"} title={title.Title} poster={title.Poster}/>
+                <UserGuess year={parseInt(title.Year, 10)} round={"RoundThree"} title={title.Title} poster={title.Poster} />
                 
             </Row>
         </Container>
@@ -78,4 +79,4 @@ function RoundThree() {
   )
 }
 
-export {RoundThree}
+export {RoundTwo}

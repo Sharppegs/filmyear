@@ -38,6 +38,7 @@ function UserGuess(props) {
         return [...new Set(arr)];
         }
 
+        
     const random4Answers = [props.year, answers[pick()], answers[pick()], answers[pick()]]
     const answerOptions = removeDupeYears(random4Answers).sort(() => Math.random() - 0.5)
 
@@ -57,19 +58,33 @@ function UserGuess(props) {
             console.log(`correct, it is ${props.year}`)
             setHasAnswered(prev => !prev)
             finalFilmList(year, poster, realYear)
-            setTimeout(() => navigate(`/${props.round}`), 2000)
+            setTimeout(() => navigate(`/${props.round}`), 1500)
         } else {
             setHasAnswered(prev => !prev)
             finalFilmListWrong(year, poster, realYear)
-            setTimeout(() => navigate(`/${props.round}`), 2000)
+            setTimeout(() => navigate(`/${props.round}`), 1500)
             
         }
+    }
+
+    function phrase() {
+        const phrases = [
+            "Could be!",
+            "Lucky Guess?",
+            "Was it really?",
+            "Maybe!",
+            "Are you sure?",
+            "Sounds Plausible!",
+            "Really?"
+        ]
+       const randomPhrase = Math.floor(Math.random()*phrases.length)
+       return phrases[randomPhrase]
     }
 
   return (
     <div>
     
-       {hasAnswered ? <div className='answered'><h3 className='logged'>Logged!</h3></div> :
+       {hasAnswered ? <div className='answered'><h3 className='logged ff-russo'>{phrase()}</h3></div> :
        <div className='buttons'> 
        {answerOptionsOrder?.map(answer =>
         <button 

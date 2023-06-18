@@ -1,5 +1,5 @@
 const fadeUp = {
-visible: { opacity: 1, y: 0, transition:{duration: 1.5} },
+visible: { opacity: 1, y: 0, transition:{duration: 0.5} },
 hidden: { opacity: 0, y: "100%" },
 }
 
@@ -34,7 +34,7 @@ hidden: { opacity: 0, y: "-100%" },
 }
 
 const fadeIn = {
-visible: { opacity: 1, transition:{duration: 2.5} },
+visible: { opacity: 1, transition:{duration: 1.5} },
 hidden: { opacity: 0 },
 }
 
