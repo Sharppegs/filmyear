@@ -1,5 +1,5 @@
 import React from 'react'
-import {Seven} from './titles'
+import {Eight} from './titles'
 import { useState, useContext } from 'react'
 import { Context } from "./Context"
 import Button from 'react-bootstrap/Button';
@@ -11,9 +11,9 @@ import UserGuess from './components/UserGuess';
 import { useEffect } from 'react';
 
 
-function RoundSeven() {
+function RoundEight() {
 
-    console.log(Seven.length) 
+    console.log(Eight.length) 
 
     const [title, setTitle] = useState({
         Title: "",
@@ -31,8 +31,8 @@ function RoundSeven() {
     },[]);
 
     function getTitle() {
-        let random = Math.floor(Math.random()*Seven.length)
-        let chosenTitle = Seven[random]
+        let random = Math.floor(Math.random()*Eight.length)
+        let chosenTitle = Eight[random]
         fetchMovie(chosenTitle)    
     }
 
@@ -68,7 +68,7 @@ function RoundSeven() {
                 />
             </Row>
             <Row>
-                <UserGuess year={parseInt(title.Year, 10)} round={"RoundEight"} title={title.Title} poster={title.Poster}/>
+                <UserGuess year={parseInt(title.Year, 10)} round={"RoundNine"} title={title.Title} poster={title.Poster}/>
                 
             </Row>
         </Container>
@@ -76,4 +76,4 @@ function RoundSeven() {
   )
 }
 
-export {RoundSeven}
+export {RoundEight}

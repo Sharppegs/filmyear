@@ -4,11 +4,15 @@ import { Moviefetch } from './Moviefetch'
 import { RoundTwo } from './RoundTwo'
 import { RoundThree } from './RoundThree'
 import { RoundFour } from './RoundFour'
-import {FinalScore}  from './FinalScore'
 import NavBar from './components/NavBar'
 import { RoundFive } from './RoundFive'
 import { RoundSix } from './RoundSix'
 import { RoundSeven } from './RoundSeven'
+import { RoundEight } from './RoundEight'
+import { RoundNine } from './RoundNine'
+import {FinalScore}  from './FinalScore'
+
+
 
 function App() {
   return (
@@ -22,9 +26,9 @@ function App() {
             <Route path="/RoundFive" element={<RoundFive />} />
             <Route path="/RoundSix" element={<RoundSix />} />
             <Route path="/RoundSeven" element={<RoundSeven />} />
+            <Route path="/RoundEight" element={<RoundEight />} />
+            <Route path="/RoundNine" element={<RoundNine />} />
             <Route path="/FinalScore" element={<FinalScore />} />
-            
-            
         </Routes>
     </div>
   )
