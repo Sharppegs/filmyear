@@ -335,7 +335,7 @@ const Six = [
     "Kramer vs Kramer",
     "Logan's Run",
     "Austin Powers: International Man of Mystery",
-    "Picnic on hanging rock",
+    "Picnic at hanging rock",
     "The Adventures of Priscilla, Queen of the Desert",
     "The Matrix",
     "Bad Boys",
