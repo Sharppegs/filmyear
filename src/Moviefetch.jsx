@@ -62,7 +62,7 @@ function Moviefetch() {
                 />
             </Row>
             <Row className='px-2'>
-                <UserGuess year={parseInt(title.Year, 10)} round={"RoundTwo"} title={title.Title} poster={title.Poster} />
+                <UserGuess year={parseInt(title.Year, 10)} round={"RoundTwo"} title={title.Title} poster={title.Poster} imdb={title.imdbID} />
             </Row>
             <Row className={beginGame ? 'd-none' : 'd-flex justify-content-center'}>
                 <button className='begin-button ff-russo' onClick={() => getTitle()}>Begin!</button> 

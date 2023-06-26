@@ -68,7 +68,7 @@ function RoundTen() {
                 />
             </Row>
             <Row>
-                <UserGuess year={parseInt(title.Year, 10)} round={"FinalScore"} title={title.Title} poster={title.Poster}/>
+                <UserGuess year={parseInt(title.Year, 10)} round={"FinalScore"} title={title.Title} poster={title.Poster} imdb={title.imdbID}/>
                 
             </Row>
         </Container>

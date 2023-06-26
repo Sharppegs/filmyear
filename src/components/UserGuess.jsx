@@ -53,15 +53,15 @@ function UserGuess(props) {
    
 
 
-    function handleClick(year, poster, realYear) {
+    function handleClick(year, poster, realYear, imdb) {
         if(year === props.year) {
             console.log(`correct, it is ${props.year}`)
             setHasAnswered(prev => !prev)
-            finalFilmList(year, poster, realYear)
+            finalFilmList(year, poster, realYear, imdb)
             setTimeout(() => navigate(`/${props.round}`), 1500)
         } else {
             setHasAnswered(prev => !prev)
-            finalFilmListWrong(year, poster, realYear)
+            finalFilmListWrong(year, poster, realYear, imdb)
             setTimeout(() => navigate(`/${props.round}`), 1500)
             
         }
@@ -91,7 +91,7 @@ function UserGuess(props) {
             key={nanoid()} 
             className={props.year ? "option-button ff-russo" : "d-none"}
             value={props.year ? answer : ""}
-            onClick={() => handleClick(answer, props.poster, props.year)}
+            onClick={() => handleClick(answer, props.poster, props.year, props.imdb)}
             
         >
             {answer}

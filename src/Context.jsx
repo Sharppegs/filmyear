@@ -11,12 +11,17 @@ function ContextProvider({children}) {
    
     
 
-      function finalFilmList(year, poster, realYear) {
-        setFilmList(prevItems => [...prevItems, {y:year, p:poster, r:realYear}])       
+      function finalFilmList(year, poster, realYear, imdb) {
+        setFilmList(prevItems => [...prevItems, {y:year, p:poster, r:realYear, id:imdb}])       
     }
     
-      function finalFilmListWrong(year, poster, realYear) {
-        setFilmListWrong(prevItems => [...prevItems, {y:year, p:poster, r:realYear}])       
+      function finalFilmListWrong(year, poster, realYear, imdb) {
+        setFilmListWrong(prevItems => [...prevItems, {y:year, p:poster, r:realYear, id:imdb}])       
+    }
+
+    function clearFilmList() {
+      setFilmList([])
+      setFilmListWrong([])
     }
     
     return (
@@ -24,7 +29,8 @@ function ContextProvider({children}) {
             filmList,
             finalFilmList,
             filmListWrong,
-            finalFilmListWrong
+            finalFilmListWrong,
+            clearFilmList
             
           }}>
             {children}

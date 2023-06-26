@@ -244,9 +244,9 @@ const Four = [
     "Das Boot",
     "Slumdog Millionaire",
     "Star Wars: Episode III - Revenge of the Sith",
+    "The Exorcist",
     "East is East",
     "Saturday Night Fever",
-    "The Exorcist",
     "Badlands",
     "Carrie",
     "Ferris Bueller's Day off",
@@ -256,7 +256,7 @@ const Four = [
     "Rocky III",
     "Field of Dreams",
     "O Lucky Man",
-    "The Bodyguard"
+    "Purple Rain"
 ]
 
 const Five = [

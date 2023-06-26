@@ -71,7 +71,7 @@ function RoundTwo() {
                 />
             </Row>
             <Row>
-                <UserGuess year={parseInt(title.Year, 10)} round={"RoundThree"} title={title.Title} poster={title.Poster} />
+                <UserGuess year={parseInt(title.Year, 10)} round={"RoundThree"} title={title.Title} poster={title.Poster} imdb={title.imdbID} />
                 
             </Row>
         </Container>
