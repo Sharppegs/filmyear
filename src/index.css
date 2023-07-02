@@ -105,6 +105,11 @@ h1 {
   width: 80px;
 }
 
+.finalPoster:hover,
+.finalPoster:focus {
+  filter: contrast(1.75);
+}
+
 .final-year,
 .final-year-wrong {
   letter-spacing: 2px;
@@ -115,6 +120,7 @@ h1 {
 
 .final-year-wrong {
   color: red;
+  text-decoration: line-through;
 }
 
 .tick {

@@ -54,6 +54,9 @@ function Moviefetch() {
   return (
     <div>
         <Container className='grid mx-auto'>
+            <div className='my-2 d-flex justify-content-between align-items-center'>
+                <h2 className='ff-russo'>Round One</h2>
+            </div>
             <Row className='mb-2'>
                 <MovieDisplay
                     movieName={title.Title}

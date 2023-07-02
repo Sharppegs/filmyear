@@ -168,7 +168,7 @@ const Three = [
     "South Park: Bigger, Longer & Uncut",
     "Eraserhead",
     "An American Werewolf in London",
-    "Harry Potter & the chamber of secrets",
+    "Harry Potter and the Chamber of Secrets",
     "Batman Returns",
     "Uncle Buck",
     "Predator",
@@ -189,7 +189,7 @@ const Three = [
     "Brazil",
     "Snatch",
     "The Commitments",
-    "Manhatten",
+    "Manhattan",
 
 ]
 

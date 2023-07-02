@@ -73,11 +73,17 @@
 
 .final-year-wrong {
   color: red;
+  text-decoration: line-through;
 }
 
 .tick {
   width: 40px;
   height: 40px;
+}
+
+.imdb-link:hover,
+.imdb-link:focus {
+  filter: contrast(1.75);
 }
 
 @media(min-width: 768px) {
