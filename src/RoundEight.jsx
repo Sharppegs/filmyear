@@ -62,7 +62,7 @@ function RoundEight() {
         <Container className='grid mx-auto'>
             <div className='my-2 d-flex justify-content-between align-items-center'>
                 <h2 className='ff-russo'>Round Eight</h2>
-                <h4 className='ff-russo'>{filmList.length} / 10</h4>
+                
             </div>
             <Row className='mb-2'>
                 <MovieDisplay
