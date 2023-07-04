@@ -43,7 +43,7 @@ const filmElementsWrong = filmListWrong.map((itemBad) =>
       <img className='finalPoster' src={itemBad.p} alt="" />
     </a>
       <div className='d-flex flex-column'>
-        <p className='ff-russo final-year-wrong'>{itemBad.y}</p>
+        <p className='ff-russo final-year-wrong'>{itemBad.y > 0? itemBad.y : ""}</p>
         <p className='ff-russo final-year'>{itemBad.r}</p>
       </div>
   </motion.div>

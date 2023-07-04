@@ -9,11 +9,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserGuess from './components/UserGuess';
 import { useEffect } from 'react';
+import Clock from "./components/Clock"
 
 
 function RoundEight() {
     const {filmList, filmListWrong} = useContext(Context)
-    
+    const [movieFetched, setMovieFetched] = useState(false)
 
     const [title, setTitle] = useState({
         Title: "",
@@ -51,6 +52,7 @@ function RoundEight() {
             const result = await response.json();
             console.log(result.Search[0])
             setTitle(result.Search[0]);
+            setMovieFetched(prev => !prev);
         } catch (error) {
             console.error(error);
         }
@@ -62,7 +64,14 @@ function RoundEight() {
         <Container className='grid mx-auto'>
             <div className='my-2 d-flex justify-content-between align-items-center'>
                 <h2 className='ff-russo'>Round Eight</h2>
-                
+                {movieFetched ? 
+                <Clock  
+                    year={parseInt(title.Year, 10)} 
+                    round={"RoundNine"} 
+                    title={title.Title} 
+                    poster={title.Poster} 
+                    imdb={title.imdbID}
+                /> : <div></div>}
             </div>
             <Row className='mb-2'>
                 <MovieDisplay

@@ -81,6 +81,11 @@ h1 {
   object-fit: cover;
 }
 
+.clock {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5rem;
+}
+
 .answered {
   margin: 1em auto;
   text-align: center;

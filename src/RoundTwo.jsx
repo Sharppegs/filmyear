@@ -8,13 +8,13 @@ import Col from 'react-bootstrap/Col';
 import UserGuess from './components/UserGuess';
 import { useEffect, useContext, useState } from 'react';
 import { Context } from "./Context"
+import Clock from "./components/Clock"
 
 
 
 function RoundTwo() {
     const {filmList, filmListWrong} = useContext(Context)
-     
-    console.log(Two.length) 
+    const [movieFetched, setMovieFetched] = useState(false)
 
     const [title, setTitle] = useState({
         Title: "",
@@ -51,13 +51,15 @@ function RoundTwo() {
         try {
             const response = await fetch(url, options);
             const result = await response.json();
-            console.log(result.Search[0])
             setTitle(result.Search[0]);
+            setMovieFetched(prev => !prev)
         } catch (error) {
             console.error(error);
             getTitle()
         }
             }
+
+    
 
            
   return (
@@ -65,7 +67,13 @@ function RoundTwo() {
         <Container className='grid mx-auto'>
             <div className='my-2 d-flex justify-content-between align-items-center'>
                 <h2 className='ff-russo'>Round Two</h2>
-                
+                {movieFetched ? <Clock  
+                    year={parseInt(title.Year, 10)} 
+                    round={"RoundThree"} 
+                    title={title.Title} 
+                    poster={title.Poster} 
+                    imdb={title.imdbID}
+                /> : <div></div>}
             </div>
             <Row className='mb-2'>
                 <MovieDisplay
@@ -75,7 +83,12 @@ function RoundTwo() {
                 />
             </Row>
             <Row>
-                <UserGuess year={parseInt(title.Year, 10)} round={"RoundThree"} title={title.Title} poster={title.Poster} imdb={title.imdbID} />
+                <UserGuess 
+                    year={parseInt(title.Year, 10)} 
+                    round={"RoundThree"} 
+                    title={title.Title} 
+                    poster={title.Poster} 
+                    imdb={title.imdbID} />
                 
             </Row>
         </Container>

@@ -9,12 +9,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import UserGuess from './components/UserGuess';
 import { useEffect } from 'react';
+import Clock from "./components/Clock"
 
 
 function RoundFive() {
 
     const {filmList, filmListWrong} = useContext(Context)
-    console.log(Five.length)  
+    const [movieFetched, setMovieFetched] = useState(false)  
 
     const [title, setTitle] = useState({
         Title: "",
@@ -50,8 +51,9 @@ function RoundFive() {
         try {
             const response = await fetch(url, options);
             const result = await response.json();
-            console.log(result.Search[0])
+            console.log(result.Search[0]);
             setTitle(result.Search[0]);
+            setMovieFetched(prev => !prev);
         } catch (error) {
             console.error(error);
         }
@@ -63,6 +65,14 @@ function RoundFive() {
         <Container className='grid mx-auto'>
             <div className='my-2 d-flex justify-content-between align-items-center'>
                 <h2 className='ff-russo'>Round Five</h2>
+                {movieFetched ? 
+                <Clock  
+                    year={parseInt(title.Year, 10)} 
+                    round={"RoundSix"} 
+                    title={title.Title} 
+                    poster={title.Poster} 
+                    imdb={title.imdbID}
+                /> : <div></div>}
                 
             </div>
             <Row className='mb-2'>
