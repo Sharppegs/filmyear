@@ -3,6 +3,7 @@ import Countdown from "react-countdown";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from "../Context"
+import { memo } from 'react';
 
 
 function Clock(props) {

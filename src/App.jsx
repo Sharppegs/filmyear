@@ -11,6 +11,7 @@ import { RoundSeven } from './RoundSeven'
 import { RoundEight } from './RoundEight'
 import { RoundNine } from './RoundNine'
 import { RoundTen } from './RoundTen'
+import { Round } from './Round'
 import {FinalScore}  from './FinalScore'
 
 
@@ -21,6 +22,7 @@ function App() {
       <NavBar />
         <Routes>
             <Route path="/" element={<Moviefetch />} />
+            {/* <Route path="/Round/:id" element={<Round />} /> */}
             <Route path="/RoundTwo" element={<RoundTwo />} />
             <Route path="/RoundThree" element={<RoundThree />} />
             <Route path="/RoundFour" element={<RoundFour />} />
@@ -30,6 +32,7 @@ function App() {
             <Route path="/RoundEight" element={<RoundEight />} />
             <Route path="/RoundNine" element={<RoundNine />} />
             <Route path="/RoundTen" element={<RoundTen />} />
+            
             <Route path="/FinalScore" element={<FinalScore />} />
         </Routes>
     </div>

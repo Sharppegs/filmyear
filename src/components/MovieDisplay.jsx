@@ -6,11 +6,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useEffect, useState } from 'react';
+import { memo } from 'react';
 
 
-function MovieDisplay(props) {
+// const ComponentA = memo(() => {
+//     // component A implementation
+//   });
 
-    
+const MovieDisplay = memo((props) => {
+   
   return (
  <div key={nanoid()}>
     
@@ -42,6 +46,6 @@ function MovieDisplay(props) {
         </Container>  
     </div>
   )
-}
+})
 
 export default MovieDisplay

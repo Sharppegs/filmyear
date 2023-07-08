@@ -8,7 +8,9 @@ function ContextProvider({children}) {
     const [filmList, setFilmList] = useState([]) 
     const [filmListWrong, setFilmListWrong] = useState([]) 
     // const [list, setList] = useState(() => JSON.parse(localStorage.getItem("myShows")) || [])
+    
    
+    
     
 
       function finalFilmList(year, poster, realYear, imdb) {
@@ -30,7 +32,8 @@ function ContextProvider({children}) {
             finalFilmList,
             filmListWrong,
             finalFilmListWrong,
-            clearFilmList
+            clearFilmList,
+            
             
           }}>
             {children}

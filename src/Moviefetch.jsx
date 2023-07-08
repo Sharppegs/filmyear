@@ -18,6 +18,9 @@ function Moviefetch() {
         Poster: ""
     })
 
+    const Id = 1
+    const nextRound = Id + 1
+
     console.log(One.length)
 
     const [beginGame, setBeginGame] = useState(false)

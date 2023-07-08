@@ -11,6 +11,7 @@ import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 
 
+
 function UserGuess(props) {
     const {finalFilmList, finalFilmListWrong} = useContext(Context) 
    const navigate = useNavigate()
@@ -51,21 +52,21 @@ function UserGuess(props) {
     console.log(answerOptionsOrder)
 
    
-
-
-    function handleClick(year, poster, realYear, imdb) {
-        if(year === props.year) {
-            console.log(`correct, it is ${props.year}`)
-            setHasAnswered(prev => !prev)
-            finalFilmList(year, poster, realYear, imdb)
-            setTimeout(() => navigate(`/${props.round}`), 1500)
-        } else {
-            setHasAnswered(prev => !prev)
-            finalFilmListWrong(year, poster, realYear, imdb)
-            setTimeout(() => navigate(`/${props.round}`), 1500)
-            
+    
+        function handleClick(year, poster, realYear, imdb) {
+            if(year === props.year) {
+                console.log(`correct, it is ${props.year}`)
+                setHasAnswered(prev => !prev)
+                finalFilmList(year, poster, realYear, imdb)
+                setTimeout(() => navigate(`/${props.round}`), 1500)
+            } else {
+                setHasAnswered(prev => !prev)
+                finalFilmListWrong(year, poster, realYear, imdb)
+                setTimeout(() => navigate(`/${props.round}`), 1500)
+                
+            }
         }
-    }
+
 
     function phrase() {
         const phrases = [
@@ -99,9 +100,7 @@ function UserGuess(props) {
         ) }
         </div>
         } 
-    </div>
-
-   
+    </div> 
   )
 }
 
