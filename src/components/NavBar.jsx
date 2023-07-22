@@ -8,8 +8,8 @@ function NavBar() {
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src="icon-youtube.svg"
-              width="30"
+              src="me.png"
+              width="25"
               height="30"
               className="d-inline-block align-top"
             />{' '}

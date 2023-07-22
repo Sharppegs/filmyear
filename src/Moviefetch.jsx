@@ -1,7 +1,7 @@
 import React from 'react'
 import {One} from './titles'
-import { useState } from 'react'
-
+import { useState, useContext } from 'react'
+import { Context } from "./Context"
 import MovieDisplay from './components/MovieDisplay';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +10,7 @@ import UserGuess from './components/UserGuess';
 
 
 function Moviefetch() {
+    const {bestScore} = useContext(Context)
     const [title, setTitle] = useState({
         Title: "",
         Year: "",
@@ -57,22 +58,46 @@ function Moviefetch() {
   return (
     <div>
         <Container className='grid mx-auto'>
-            <div className='my-2 d-flex justify-content-between align-items-center'>
+            <div className={beginGame ? 'my-2 d-flex justify-content-between align-items-center' : 'd-none'}>
                 <h2 className='ff-russo'>Round One</h2>
             </div>
-            <Row className='mb-2'>
+            <Row className='mb-2 mt-0 mt-md-5'>
+                {beginGame ?
+                
                 <MovieDisplay
                     movieName={title.Title}
                     year={parseInt(title.Year, 10)}
                     poster={title.Poster}
                 />
+                :
+                <>
+                <Col md={6} className='d-flex justify-content-center align-items-center'>
+                <MovieDisplay
+                    movieName={title.Title}
+                    year={parseInt(title.Year, 10)}
+                    poster={title.Poster}
+                />
+                </Col>
+                <Col md={6}>
+                    <div className={beginGame ? 'd-none' : 'd-flex flex-column align-items-center justify-content-center px-5'}>
+                        <div className='landing-text mb-5'>
+                            <h1 className='ff-russo'>FilmYear</h1>
+                            <h5 className='ff-russo text-center lh-md'>What year were these movies released?</h5>
+                            <div className='px-3'>
+                            <p className='ff-russo text-center'>Your current best score is</p>
+                            <h2 className='ff-russo text-center lh-md best-score'>{bestScore} / 10</h2>
+                            </div> 
+                        </div>
+                        <button className='begin-button ff-russo' onClick={() => getTitle()}>Begin!</button>
+                    </div>
+                </Col>
+                </>
+                }
             </Row>
             <Row className='px-2'>
                 <UserGuess year={parseInt(title.Year, 10)} round={"RoundTwo"} title={title.Title} poster={title.Poster} imdb={title.imdbID} />
             </Row>
-            <Row className={beginGame ? 'd-none' : 'd-flex justify-content-center'}>
-                <button className='begin-button ff-russo' onClick={() => getTitle()}>Begin!</button> 
-            </Row>
+            
             
         </Container>
     </div>

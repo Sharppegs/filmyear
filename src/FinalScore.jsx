@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Context } from "./Context"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,13 +7,21 @@ import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeDown} from './components/variants';
+import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon, WhatsappShareButton, WhatsappIcon } from 'react-share';
 
 function FinalScore() {
 
-const {filmList, filmListWrong, clearFilmList} = useContext(Context)
+const {filmList, filmListWrong, clearFilmList, bestScore, setBestScore} = useContext(Context)
 const score = filmList.length
 const scoreWrong = filmListWrong.length
 const navigate = useNavigate()
+
+useEffect(() => {
+  if(filmList.length > bestScore) {
+  localStorage.setItem('myScore', JSON.stringify(filmList.length))
+  setBestScore(filmList.length)
+  }
+}, [])
 
 const filmElements = filmList.map((item) => 
   <motion.div 
@@ -70,8 +78,38 @@ function beginAgain() {
         <h4 className='mb-4 ff-russo'>{scoreWrong > 0 ? `You got ${scoreWrong} wrong` : ""}</h4>
         {filmElementsWrong}
       </Row>
-      <Row className='mb-4 d-flex align-items-center justify-content-center'>
-        <button className='begin-button ff-russo' onClick={() => beginAgain()}>Play Again</button> 
+      <Row className='mb-4 text-center ff-russo'>
+        <p>Share your score!</p>
+        
+        <div className='d-flex align-items-center justify-content-center mb-5'>
+          <TwitterShareButton
+            url={'https://filmyear.netlify.app'}
+            quote={`I just got ${filmList.length} out of 10 on FilmYear!`}
+            hashtag="#filmyear"
+            className='mx-3'
+            >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+
+          <FacebookShareButton
+            url={'https://filmyear.netlify.app'}
+            quote={`I just got ${filmList.length} out of 10 on FilmYear!`}
+            hashtag="#filmyear"
+            className='mx-3'
+            >
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+
+          <WhatsappShareButton
+            url={'https://filmyear.netlify.app'}
+            quote={`I just got ${filmList.length} out of 10 on FilmYear!`}
+            hashtag="#filmyear"
+            className='mx-3'
+            >
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+        </div>
+        <button className='end-button ff-russo m-auto' onClick={() => beginAgain()}>Play Again</button> 
       </Row>
       
     </Container>

@@ -29,6 +29,7 @@ body {
   min-height: 100vh;
   background-color: #242424;
   color: rgba(255, 255, 255, 0.87);
+ 
 }
 
 h1 {
@@ -39,24 +40,60 @@ h1 {
   font-family: 'Russo One', sans-serif;
 }
 
+.landing-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #141414;
+  color: #f5f5f5;
+  padding: 1em;
+  border-radius: 15px;
+  gap: 1em;
+}
+
 .image-border {
   width: 200px;
   height: 250px;
-  border: 2px solid purple;
+  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
+  border: 2px solid rgb(88, 1, 88);
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0.5em 0.5em 0.5em -0.5em, rgba(119, 119, 119, 0.5);
+  box-shadow: 0.5em 0.5em 0.5em -0.5em, rgba(119, 119, 119, 0.5); 
+  background-image: url('backdrop.jpg');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-color: #606060;
 }
 
 .begin-button {
-  width: 250px;
+  width: 200px;
   border-radius: 15px;
   padding: 1em 1.5em;
+  background: #0D6986;
+  color: #f5f5f5;
+  border: none;
+  outline: none;
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5rem;
+}
+
+.end-button {
+  width: 200px;
+  border-radius: 15px;
+  padding: 1em;
   background: rgb(206, 195, 169);
   border: none;
   outline: none;
   font-family: 'Russo One', sans-serif;
   font-size: 1.5rem;
+}
+
+.best-score {
+  color: #DBA507;
+  font-size: 2.5rem;
 }
 
 .option-button {
@@ -66,7 +103,7 @@ h1 {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: goldenrod;
+  background-color: #DBA507;
   color: #000;
   display: grid;
   place-content: center;
@@ -135,8 +172,8 @@ h1 {
 
 @media(min-width: 768px) {
   .image-border {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 350px;
   }
 
   .buttons {
