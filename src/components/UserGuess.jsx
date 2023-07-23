@@ -47,9 +47,9 @@ function UserGuess(props) {
 
     const answerOptionsOrder = answerOptions.sort((a, b) => a-b);
     if(answerOptionsOrder.length < 4) {
-        answerOptionsOrder.push(answers[6])
+        answerOptionsOrder.push((answers[6]) + 2)
     }
-    console.log(answerOptionsOrder)
+    
 
    
     
@@ -76,7 +76,11 @@ function UserGuess(props) {
             "Maybe!",
             "Are you sure?",
             "Sounds Plausible!",
-            "Really?"
+            "Really?",
+            "That long ago?",
+            "Might be!",
+            "Hmmm",
+            "You seem confident!"
         ]
        const randomPhrase = Math.floor(Math.random()*phrases.length)
        return phrases[randomPhrase]

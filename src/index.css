@@ -62,7 +62,7 @@ h1 {
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0.5em 0.5em 0.5em -0.5em, rgba(119, 119, 119, 0.5); 
-  background-image: url('/backdrop.jpg');
+  background-image: url('backdrop.jpg');
   background-blend-mode: overlay;
   background-size: cover;
   background-color: #606060;
