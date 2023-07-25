@@ -56,6 +56,7 @@ function RoundFive() {
             setMovieFetched(prev => !prev);
         } catch (error) {
             console.error(error);
+            getTitle()
         }
             }
 

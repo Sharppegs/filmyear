@@ -55,7 +55,7 @@ function UserGuess(props) {
     
         function handleClick(year, poster, realYear, imdb) {
             if(year === props.year) {
-                console.log(`correct, it is ${props.year}`)
+                
                 setHasAnswered(prev => !prev)
                 finalFilmList(year, poster, realYear, imdb)
                 setTimeout(() => navigate(`/${props.round}`), 1500)

@@ -55,6 +55,7 @@ function RoundSeven() {
             setMovieFetched(prev => !prev);
         } catch (error) {
             console.error(error);
+            getTitle()
         }
             }
 

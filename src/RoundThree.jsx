@@ -57,6 +57,7 @@ function RoundThree() {
             setMovieFetched(prev => !prev)
         } catch (error) {
             console.error(error);
+            getTitle()
         }
             }
 
